@@ -1,0 +1,33 @@
+{% extends 'page/base.html' %}
+
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+{% for article in articles %}
+   <main class="ca">
+      <div class="deco">
+      	<div class="colone">
+
+      		<div class="cont">
+
+      			<h5> {{article.title}}</h5>
+
+
+      				<p>
+      					{{ article.dpt }}
+      				</p>
+				<div class="box">
+						<div class="prix">{{article.phonenb}}</div>
+                        <button class="achat"><a href="https://wa.me/674242450">Whatsapp</a></button>
+                    </div>
+      		</div>
+
+      	</div>
+                  <div class="sty" style="background-image: url('{{ article.thumbnail.url}}');">
+                       &nbsp;
+                  </div>
+      </div>
+{% endfor %}
+{% endblock %}

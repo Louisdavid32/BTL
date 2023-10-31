@@ -1,0 +1,32 @@
+{% extends 'page/base.html' %}
+
+{% load static %}
+
+{% block title %}Desciptions{% endblock %}
+
+{% block body %}
+{% for article in articles %}
+   <main class="ca">
+      <div class="deco">
+
+      	<div class="sty" style="background-image: url('{{ article.thumbnail.url}}');">
+      		&nbsp;
+      	</div>
+
+      	<div class="colone">
+
+      		<div class="cont">
+
+      			<h5> {{article.title}}</h5>
+
+      				<p>
+      					{{ article.des }}
+      				</p>
+
+      		</div>
+
+      	</div>
+
+      </div>
+{% endfor %}
+{% endblock %}

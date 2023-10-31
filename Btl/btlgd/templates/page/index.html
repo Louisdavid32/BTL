@@ -1,0 +1,25 @@
+{% extends 'page/base.html' %}
+
+{% load static %}
+
+{% block title %}home{% endblock %}
+
+{% block body %}
+
+    <section class="sp">
+		<h1 class="produit">Nos Réalisations:</h1>
+			<div class="produits">
+				{% for article in articles %}
+				<div class="carte">
+						<div class="img"><img src="{{article.thumbnail.url}}"></div>
+						<div class="desc">{{ article.description|truncatechars:"25" }}...</div>
+						<div class="titre">{{ article.name }}</div>
+						<div class="box">
+							<div class="prix">Btl</div>
+							<button class="achats"><a href="/product">Voir</a></button>
+						</div>
+				</div>
+				{% endfor %}
+            </div>
+	</section>
+{% endblock %}

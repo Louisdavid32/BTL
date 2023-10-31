@@ -1,0 +1,28 @@
+{% extends 'page/base.html' %}
+
+{% load static %}
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+   <main class="ca">
+	    {% for article in articles %}
+			  <div class="deco">
+					<div class="sty" style="background-image: url('{{ article.thumbnail.url}}');">
+						&nbsp;
+					</div>
+					<div class="colone">
+						<div class="cont">
+
+							<h5> {{article.name}}</h5>
+								<p>
+									{{ article.description }}
+								</p>
+						</div>
+					</div>
+			  </div>
+	   <hr>
+	 {% endfor %}
+
+   </main>
+{% endblock %}
